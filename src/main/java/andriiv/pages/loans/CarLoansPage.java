@@ -1,4 +1,4 @@
-package andriiv.pages.car_loans;
+package andriiv.pages.loans;
 
 import org.openqa.selenium.WebDriver;
 

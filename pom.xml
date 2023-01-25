@@ -59,6 +59,14 @@
             <artifactId>allure-junit5</artifactId>
             <version>2.20.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v109 -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v109</artifactId>
+            <version>4.8.0</version>
+        </dependency>
+
+
     </dependencies>
 
 

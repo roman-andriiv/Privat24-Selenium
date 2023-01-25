@@ -2,7 +2,8 @@ package andriiv.base;
 
 import andriiv.common.CommonActions;
 import andriiv.pages.base.BasePage;
-import andriiv.pages.car_loans.CarLoansPage;
+import andriiv.pages.loans.CarLoansPage;
+import andriiv.pages.telecomunications.MobilePhoneReplenishmentPage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.TestInstance;
@@ -14,9 +15,11 @@ import static andriiv.common.Config.HOLD_BROWSER_OPEN;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
+
     protected WebDriver driver = CommonActions.createDriver();
     protected BasePage basePage = new BasePage(driver);
     protected CarLoansPage carLoansPage = new CarLoansPage(driver);
+    protected MobilePhoneReplenishmentPage mobilePhoneReplenishmentPage = new MobilePhoneReplenishmentPage(driver);
 
     @AfterEach
     void cleanCookiesAndLocalStorage() {
