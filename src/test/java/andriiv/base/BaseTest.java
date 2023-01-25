@@ -15,7 +15,7 @@ import org.openqa.selenium.WebDriver;
 import static andriiv.common.Config.CLEAR_COOKIES;
 import static andriiv.common.Config.HOLD_BROWSER_OPEN;
 
-@Execution(ExecutionMode.CONCURRENT)
+//@Execution(ExecutionMode.CONCURRENT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
 

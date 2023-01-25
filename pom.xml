@@ -65,8 +65,6 @@
             <artifactId>selenium-devtools-v109</artifactId>
             <version>4.8.0</version>
         </dependency>
-
-
     </dependencies>
 
 
@@ -82,7 +80,10 @@
                 <artifactId>allure-maven</artifactId>
                 <version>2.9</version>
                 <configuration>
-                    <reportVersion>2.6.0</reportVersion>
+                    <reportVersion>2.20.1</reportVersion>
+                    <installDirectory>${project.build.directory}/allure-results</installDirectory>
+                    <allureDownloadUrl>
+                        https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.20.1/allure-commandline-2.20.1.zip</allureDownloadUrl>
                 </configuration>
             </plugin>
             <plugin>
