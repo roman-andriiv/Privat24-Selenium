@@ -7,6 +7,7 @@ import andriiv.pages.telecomunications.MobilePhoneReplenishmentPage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,6 +17,7 @@ import static andriiv.common.Config.CLEAR_COOKIES;
 import static andriiv.common.Config.HOLD_BROWSER_OPEN;
 
 //@Execution(ExecutionMode.CONCURRENT)
+@ExtendWith(Listener.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
 

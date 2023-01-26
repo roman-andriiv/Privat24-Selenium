@@ -20,7 +20,7 @@ public class Constant {
         * and doesn't belong to any cardholder. The cardholder's name, address, money, CVV/CVC, expiration date,
         * and PIN are randomly generated.
         */
-        public static final String MOBILE_PAYMENT_PHONE_NUMBER = "730835063";
+        public static final String MOBILE_PAYMENT_PHONE_NUMBER = "983783676";
         public static final String MOBILE_PAYMENT_CARD = "5461028042316598";
         public static final String MOBILE_PAYMENT_CARD_EXPIRE_DATE = "0925";
         public static final String MOBILE_PAYMENT_CARD_CVV = "992";

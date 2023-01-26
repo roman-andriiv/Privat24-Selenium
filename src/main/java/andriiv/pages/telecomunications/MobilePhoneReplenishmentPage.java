@@ -1,8 +1,11 @@
 package andriiv.pages.telecomunications;
 
 import andriiv.pages.base.BasePage;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class MobilePhoneReplenishmentPage extends BasePage {
     public MobilePhoneReplenishmentPage(WebDriver driver) {
@@ -16,6 +19,7 @@ public class MobilePhoneReplenishmentPage extends BasePage {
     private final By inputExpireDate = By.xpath("//input[@data-qa-node='expiredebitSource']");
     private final By inputCvv = By.xpath("//input[@data-qa-node='cvvdebitSource']");
     private final By buttonAddToCard = By.xpath("//button[@data-qa-node='submit']");
+    private final By paymentDetails = By.xpath("//div[@data-qa-node='details']");
 
 
     /**
@@ -40,7 +44,8 @@ public class MobilePhoneReplenishmentPage extends BasePage {
      * @param amount the amount of money
      */
     public MobilePhoneReplenishmentPage enterAmount(String amount){
-        driver.findElement(inputAmount).clear();
+        driver.findElement(inputAmount).sendKeys(Keys.CONTROL + "a");
+        driver.findElement(inputAmount).sendKeys(Keys.DELETE);
         driver.findElement(inputAmount).sendKeys(amount);
         return this;
     }
@@ -77,6 +82,15 @@ public class MobilePhoneReplenishmentPage extends BasePage {
      */
     public MobilePhoneReplenishmentPage submitAddToCard(){
         driver.findElement(buttonAddToCard).click();
+        return this;
+    }
+    /**
+     * @param text
+     */
+    public MobilePhoneReplenishmentPage checkPaymentDetailsIsPresent(String text){
+        waitElementIsVisible(driver.findElement(paymentDetails));
+        WebElement details = driver.findElement(paymentDetails);
+        Assertions.assertEquals(text, details.getText());
         return this;
     }
 }
