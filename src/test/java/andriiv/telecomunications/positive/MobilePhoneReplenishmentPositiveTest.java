@@ -25,6 +25,6 @@ public class MobilePhoneReplenishmentPositiveTest extends BaseTest {
                 .enterExpireDate(MOBILE_PAYMENT_CARD_EXPIRE_DATE)
                 .enterCvv(MOBILE_PAYMENT_CARD_CVV)
                 .submitAddToCard()
-                .checkPaymentDetailsIsPresent("Mobile payment. Phone number +380983783676");
+                .checkPaymentDetailsIsPresent("FAIL Mobile payment. Phone number +380983783676");
     }
 }

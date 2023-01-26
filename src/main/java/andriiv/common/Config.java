@@ -11,11 +11,11 @@ public class Config {
     /**
      * Clean browser cookies after each iteration
      */
-    public static final boolean CLEAR_COOKIES = true;
+    public static final boolean CLEAR_COOKIES = false;
     /**
      * To keep the browser open after all scenarios/tests
      */
-    public static final boolean HOLD_BROWSER_OPEN = true;
+    public static final boolean HOLD_BROWSER_OPEN = false;
     /**
      * Clear the directory with the screenshots before starting the build
      */
