@@ -27,7 +27,7 @@ public class Listener implements TestWatcher {
 
         File source = ts.getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(source, new File("build/reports/tests"+ screenshotName+".png"));
+            FileUtils.copyFile(source, new File("build/reports/tests/"+ screenshotName+".png"));
         } catch (IOException e) {
             logger.error("Exception on saving screenshot!");
             e.printStackTrace();

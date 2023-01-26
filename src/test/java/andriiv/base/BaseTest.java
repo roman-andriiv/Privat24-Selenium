@@ -12,9 +12,14 @@ import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import static andriiv.common.Config.CLEAR_COOKIES;
-import static andriiv.common.Config.HOLD_BROWSER_OPEN;
+import java.io.File;
+import java.time.LocalTime;
+import java.util.Objects;
+
+import static andriiv.common.Config.*;
 
 //@Execution(ExecutionMode.CONCURRENT)
 @ExtendWith(Listener.class)
@@ -25,6 +30,26 @@ public class BaseTest {
     protected BasePage basePage = new BasePage(driver);
     protected CarLoansPage carLoansPage = new CarLoansPage(driver);
     protected MobilePhoneReplenishmentPage mobilePhoneReplenishmentPage = new MobilePhoneReplenishmentPage(driver);
+    private static final Logger logger = LoggerFactory.getLogger(BaseTest.class);
+
+    static {
+        logger.info("START TIME: " + LocalTime.now());
+        logger.info("Starting clear reports directories: build/reports" );
+
+        File allureResults = new File("allure-results");
+
+        if (allureResults.isDirectory()){
+            for (File item : Objects.requireNonNull(allureResults.listFiles())){
+                item.delete();
+            }
+        }
+        if (CLEAR_REPORTS_DIR){
+            File allureScreenshots = new File("build/reports/tests");
+            for (File item : Objects.requireNonNull(allureScreenshots.listFiles())){
+                item.delete();
+            }
+        }
+    }
 
     @AfterEach
     void cleanCookiesAndLocalStorage() {

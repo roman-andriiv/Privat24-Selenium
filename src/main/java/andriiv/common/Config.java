@@ -16,4 +16,8 @@ public class Config {
      * To keep the browser open after all scenarios/tests
      */
     public static final boolean HOLD_BROWSER_OPEN = true;
+    /**
+     * Clear the directory with the screenshots before starting the build
+     */
+    public static final boolean CLEAR_REPORTS_DIR = true;
 }
